@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Landing Page</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f7ff;
+            color: #333;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #2c82c9;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        /* Product Showcase styles */
+        .product-showcase {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            justify-content: center;
+        }
+
+        .product {
+            margin: 0 10px;
+            text-align: center;
+            background-color: #eaf6ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product h3 {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #2c82c9;
+        }
+
+        .product p {
+            font-size: 16px;
+            margin-top: 5px;
+            color: #666;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #2c82c9;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .footer-links li {
+            margin-right: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffd700;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                background-color: #2c82c9;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                text-align: center;
+                z-index: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">ELSHEIKH</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="burger">&#9776;</div>
+        </nav>
+    </header>
+
+    <!-- Product Showcase -->
+    <section class="product-showcase">
+        <div class="slider">
+            <div class="product">
+                <h3>Blue T-Shirt</h3>
+                <p>$25</p>
+            </div>
+            <div class="product">
+                <h3>Navy Jacket</h3>
+                <p>$60</p>
+            </div>
+            <div class="product">
+                <h3>Sky Blue Jeans</h3>
+                <p>$45</p>
+            </div>
+            <div class="product">
+                <h3>Aqua Scarf</h3>
+                <p>$15</p>
+            </div>
+            <div class="product">
+                <h3>Cerulean Hat</h3>
+                <p>$20</p>
+            </div>
+            <!-- More products -->
+            <div class="product">
+                <h3>Indigo Hoodie</h3>
+                <p>$55</p>
+            </div>
+            <div class="product">
+                <h3>Teal Skirt</h3>
+                <p>$30</p>
+            </div>
+            <div class="product">
+                <h3>Royal Blue Shoes</h3>
+                <p>$40</p>
+            </div>
+            <div class="product">
+                <h3>Light Blue Dress</h3>
+                <p>$70</p>
+            </div>
+            <div class="product">
+                <h3>Ocean Blue Backpack</h3>
+                <p>$35</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Searching -->
+    <section class="search" style="text-align: center; padding: 20px;">
+        <form action="#" method="GET">
+            <input type="text" name="search" placeholder="Search products..."
+                style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <button type="submit"
+                style="padding: 10px 20px; border-radius: 5px; border: none; background-color: #0057ff; color: #fff; cursor: pointer;">Search</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.burger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
