@@ -230,8 +230,8 @@
 
     <!-- Searching -->
     <section class="search" style="text-align: center; padding: 20px;">
-        <form action="#" method="GET">
-            <input type="text" name="search" placeholder="Search products..."
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Search products..."
                 style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
             <button type="submit"
                 style="padding: 10px 20px; border-radius: 5px; border: none; background-color: #0057ff; color: #fff; cursor: pointer;">Search</button>
@@ -255,6 +255,21 @@
     <script>
         document.querySelector('.burger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        document.getElementById('searchForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            var products = document.querySelectorAll('.product');
+
+            products.forEach(function (product) {
+                var productName = product.querySelector('h3').textContent.toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
         });
     </script>
 </body>
